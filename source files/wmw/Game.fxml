@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="450.0" maxWidth="650.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wmw.GameController">
+   <Rectangle arcHeight="5.0" arcWidth="5.0" height="450.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" width="650.0">
+      <fill>
+         <LinearGradient cycleMethod="REFLECT" endY="0.8755187019018141" startX="1.0" startY="0.900414917376989">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="1.0" green="0.7979543805122375" blue="0.7979543805122375" />
+                  </color>
+               </Stop>
+               <Stop offset="0.007620895375070574">
+                  <color>
+                     <Color red="0.7300000190734863" green="0.9011757969856262" blue="1.0" />
+                  </color>
+               </Stop>
+               <Stop offset="0.3082998473992914">
+                  <color>
+                     <Color red="1.0" green="1.0" blue="1.0" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="1.0" green="1.0" blue="1.0" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </fill>
+   </Rectangle>
+   <Line endX="100.0" endY="450.0" layoutX="-28.0" layoutY="-1.0" opacity="0.57" startX="100.0" stroke="#ff5e5e" strokeWidth="3.0" />
+   <Circle fx:id="stickHead" fill="#1f93ff00" layoutX="393.0" layoutY="139.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+   <Line fx:id="stickBody" endX="-100.00001525878906" endY="-62.727264404296875" layoutX="493.0" layoutY="223.0" startX="-100.0" strokeWidth="2.0" />
+   <Line fx:id="stickArmL" endX="100.0" layoutX="291.0" layoutY="190.0" startX="60.25456237792969" startY="-19.727264404296875" strokeWidth="2.0" />
+   <Line fx:id="stickArmR" endX="100.0" layoutX="294.0" layoutY="192.0" startX="139.25454711914062" startY="-23.727264404296875" strokeWidth="2.0" />
+   <Line fx:id="stickLegL" endX="100.0" layoutX="293.0" layoutY="224.0" startX="76.25456237792969" startY="36.272735595703125" strokeWidth="2.0" />
+   <Line fx:id="stickLegR" endX="-73.74545288085938" endY="37.272735595703125" layoutX="495.0" layoutY="223.0" startX="-100.0" strokeWidth="2.0" />
+   <Line endX="-100.00001525878906" endY="-30.727264404296875" layoutX="495.0" layoutY="118.0" startX="-100.0" stroke="#3c2200" strokeWidth="4.0" />
+   <Line endX="-34.745452880859375" layoutX="497.0" layoutY="87.0" startX="-100.0" stroke="#3c2200" strokeWidth="4.0" />
+   <Line endX="-100.00003051757812" endY="176.27273559570312" layoutX="564.0" layoutY="87.0" startX="-100.0" stroke="#3c2200" strokeWidth="4.0" />
+   <Label fx:id="letters" layoutX="94.0" layoutY="11.0" prefHeight="45.0" prefWidth="510.0" text="SOMETHINGS_WRONG">
+      <font>
+         <Font name="Lucida Sans Unicode" size="44.0" />
+      </font>
+   </Label>
+   <Label fx:id="numPossibleText" layoutX="95.0" layoutY="70.0" prefHeight="25.0" prefWidth="209.0" text="30155 possible words" textFill="#6b0000">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <Button fx:id="nextButton" layoutX="515.0" layoutY="342.0" mnemonicParsing="false" onAction="#makeGuess" prefHeight="66.0" prefWidth="115.0" style="-fx-background-color: #78d4ff; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 2);" text="Next AI Guess">
+      <font>
+         <Font name="Consolas" size="13.0" />
+      </font>
+   </Button>
+   <Button fx:id="yesButton" layoutX="95.0" layoutY="342.0" mnemonicParsing="false" onAction="#yesPress" prefHeight="66.0" prefWidth="103.0" style="-fx-background-color: #c7ff96; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 2);" text="YES" textFill="#1f0505">
+      <font>
+         <Font name="Consolas" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="noButton" layoutX="219.0" layoutY="342.0" mnemonicParsing="false" onAction="#noPress" prefHeight="66.0" prefWidth="103.0" style="-fx-background-color: #ff7171; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 2);" text="NO">
+      <font>
+         <Font name="Consolas" size="14.0" />
+      </font>
+   </Button>
+   <TextField fx:id="locationsTextBox" layoutX="94.0" layoutY="198.0" onKeyTyped="#enableLocationSubmit" prefHeight="27.0" prefWidth="144.0" promptText="ex. 1,3,5" />
+   <Label fx:id="locationsText" layoutX="94.0" layoutY="158.0" prefHeight="44.0" prefWidth="177.0" text="Which locations is the letter present (comma seperated)" textOverrun="CLIP" wrapText="true">
+      <font>
+         <Font size="13.0" />
+      </font></Label>
+   <FlowPane id="flowPane" fx:id="flowPane" layoutX="487.0" layoutY="86.0" prefHeight="145.0" prefWidth="145.0" />
+   <Button fx:id="locationsSubmit" layoutX="256.0" layoutY="198.0" mnemonicParsing="false" onAction="#finalizeLocations" prefHeight="23.0" prefWidth="80.0" style="-fx-background-color: #c7ff96; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 2);" text="Submit" textFill="#1f0505">
+      <font>
+         <Font name="Consolas" size="14.0" />
+      </font>
+   </Button>
+   <Label fx:id="centerText" layoutX="94.0" layoutY="291.0" prefHeight="24.0" prefWidth="607.0" text="Are you ready for the first guess?" textAlignment="CENTER">
+      <font>
+         <Font name="Consolas" size="20.0" />
+      </font>
+   </Label>
+   <Button fx:id="resetButton" layoutX="323.0" layoutY="336.0" mnemonicParsing="false" onAction="#start" text="Reset" visible="false">
+      <font>
+         <Font name="Consolas" size="14.0" />
+      </font>
+   </Button>
+   <Rectangle fx:id="blackSquare" arcHeight="5.0" arcWidth="5.0" height="450.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="650.0" />
+</AnchorPane>

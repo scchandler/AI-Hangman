@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wmw.StartController">
+   <Button fx:id="startButton" disable="true" layoutX="422.0" layoutY="330.0" mnemonicParsing="false" onAction="#start" prefHeight="29.0" prefWidth="78.0" text="Start">
+      <font>
+         <Font name="Consolas" size="18.0" />
+      </font>
+   </Button>
+   <Label layoutX="31.0" layoutY="32.0" text="Welcome to Hangman AI" textFill="WHITE">
+      <font>
+         <Font name="Consolas" size="24.0" />
+      </font>
+   </Label>
+   <Label fx:id="descriptionText" layoutX="31.0" layoutY="70.0" prefHeight="134.0" prefWidth="471.0" textFill="WHITE" wrapText="true">
+      <font>
+         <Font name="Consolas" size="14.0" />
+      </font>
+   </Label>
+   <TextField fx:id="lengthPrompt" layoutX="225.0" layoutY="330.0" onKeyTyped="#enableButton" prefHeight="34.0" prefWidth="182.0" promptText="Enter the word length" />
+</AnchorPane>
